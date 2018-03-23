@@ -48,14 +48,3 @@ class Logger(object):
             return False
         self.store[message] = timestamp
         return True
-
-
-
-# Your Logger object will be instantiated and called as such:
-obj = Logger()
-print obj.shouldPrintMessage(1, 'foo')
-# print obj.shouldPrintMessage(2, 'bar')
-# print obj.shouldPrintMessage(3, 'foo')
-# print obj.shouldPrintMessage(8, 'bar')
-# print obj.shouldPrintMessage(10, 'foo')
-print obj.shouldPrintMessage(11, 'foo')
