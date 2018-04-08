@@ -23,12 +23,10 @@ class Solution(object):
         :type S: str
         :rtype: List[str]
         """
-        if not s:
-        	return [s]
+        if not s: return [s]
 
-        if s[0] in string.ascii_lowercase or s[0] in string.ascii_uppercase:
-        	return [s[0].upper() + i for i in self.letterCasePermutation(s[1:])] + [s[0].lower() + i for i in self.letterCasePermutation(s[1:])]
-        else:
-        	return [s[0] + i for i in self.letterCasePermutation(s[1:])]
+        perms = self.letterCasePermutation(s[1:])
+
+        return [s[0].upper()+ i for i in perms] + [s[0].lower()+ i for i in perms] if s[0] in string.ascii_lowercase+string.ascii_uppercase else [s[0]+ i for i in perms]
 
 print Solution().letterCasePermutation("C")
